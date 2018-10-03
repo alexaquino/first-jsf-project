@@ -10,6 +10,7 @@ public class UserRepository
 {
 	private SessionFactory sessionFactory;
 	
+	
 	public SessionFactory getSessionFactory()
 	{
 		return sessionFactory;

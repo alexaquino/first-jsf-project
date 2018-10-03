@@ -1,17 +1,28 @@
 package br.com.fxcosta.beans;
 
 import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
 import br.com.fxcosta.entities.UserEntity;
 import br.com.fxcosta.repositories.UserRepository;
 
-@ManagedBean(name = "userBean")
+@Named
 @RequestScoped
 public class UserBean 
 {
-	public UserRepository userRepo = new UserRepository();
+
+	private UserRepository userRepo = new UserRepository();
 	
+	public UserRepository getUserRepo() {
+		return userRepo;
+	}
+
+	public void setUserRepo(UserRepository userRepo) {
+		this.userRepo = userRepo;
+	}
+
 	public List<UserEntity> getUserList()
 	{
 		return this.userRepo.getUsers();

@@ -1,16 +1,18 @@
 package br.com.fxcosta;
 
 import java.io.Serializable;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
-@ManagedBean(name = "helloBean")
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+
+@Named
 @RequestScoped
 public class HelloWorld implements Serializable {
 
 	private static final long serialVersionUID = 1l;
 	
-	public String name;
+	private String name;
 
 	/**
 	 * @return
